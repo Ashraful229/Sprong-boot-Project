@@ -12,3 +12,8 @@ body{
 	background-size:cover;
 	color: white;
 }
+.my-card
+{
+	padding:20px;
+	background: #ffffff; 
+}

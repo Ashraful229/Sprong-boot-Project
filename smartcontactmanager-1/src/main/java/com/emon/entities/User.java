@@ -14,6 +14,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 
 
@@ -25,6 +27,8 @@ public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
+	@NotBlank(message = "Name should not be blank")
+	@Size(min = 2,max = 20,message = "min 2 and max 20 char are allowed")
 	private String name;
 	@Column(unique=true)
 	private String email;
@@ -115,6 +119,17 @@ public class User {
 
 	public void setContacts(List<Contact> contacts) {
 		this.contacts = contacts;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", role=" + role
+				+ ", enable=" + enable + ", imgeUrl=" + imgeUrl + ", about=" + about + ", contacts=" + contacts
+				+ ", getId()=" + getId() + ", getName()=" + getName() + ", getEmail()=" + getEmail()
+				+ ", getPassword()=" + getPassword() + ", getRole()=" + getRole() + ", getEnable()=" + getEnable()
+				+ ", getImgeUrl()=" + getImgeUrl() + ", getAbout()=" + getAbout() + ", getContacts()=" + getContacts()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
 	}
 	 
 	
