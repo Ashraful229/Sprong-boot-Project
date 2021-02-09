@@ -45,6 +45,13 @@ public class HomeController {
 		return "signup";
 	}
 	
+	@RequestMapping("/signin")
+	public String customLogin(Model model)
+	{
+		model.addAttribute("title","Login");
+		return "login";
+	}
+	
 	@RequestMapping(value = "/do_register",method=RequestMethod.POST)
 	public String registerUser( @Valid @ModelAttribute("user") User user ,BindingResult result ,@RequestParam(value="aggrement",defaultValue = "false") boolean aggrement,Model model,HttpSession session)
 	{
