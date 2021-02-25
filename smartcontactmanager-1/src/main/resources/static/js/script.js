@@ -40,7 +40,7 @@ const search=()=>{
 		  let text = `<div class='list-group'>`;
 			data.forEach((contact)=>
 			{
-				text +=`<a href='/user/contact/${contact.cId}' class='list-group-item list-group-action'> ${contact.name} </a>`
+				text +=`<a href='/user/contact/${contact.cId}' class='list-group-item list-group-item-action'> ${contact.name} </a>`
 			});
 			
 			
